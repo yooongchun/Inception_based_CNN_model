@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="container" style="height: 100%"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+option = {
+    title: {
+        text: 'Classification Model',
+        left:'40%',
+    },
+    tooltip: {},
+     toolbox: {
+        feature: {
+            saveAsImage: {}
+        }
+    },
+    animationDurationUpdate: 1500,
+    animationEasingUpdate: 'quinticInOut',
+    series : [
+        {
+            type: 'graph',
+            layout: 'none',
+            
+            symbolSize: 50,
+            roam: true,
+            label: {
+                normal: {
+                    show: true
+                }
+            },
+            edgeSymbol: ['circle', 'arrow'],
+            edgeSymbolSize: [4, 10],
+            edgeLabel: {
+                normal: {
+                    textStyle: {
+                        fontSize: 40
+                    }
+                }
+            },
+            data: [{
+                name: 'fea1',
+                x: 0,
+                y: 0
+            }, {
+                name: 'fea2',
+                x: 0,
+                y: 30
+            }, {
+                name: 'fea3',
+                x: 0,
+                y: 60
+            }, {
+                name: '...',
+                x: 0,
+                y: 90
+            }, {
+                name: 'fea2048',
+                x: 0,
+                y: 120
+            }, {
+                name: 'II',
+                x: 100,
+                y: 30
+            }, {
+                name: 'III',
+                x: 100,
+                y: 60
+            }, {
+                name: 'IV',
+                x: 100,
+                y: 90
+            }
+            ],
+            // links: [],
+            links: [{
+                source: 'fea1',
+                target: 'II',
+                symbolSize: [5, 20],
+                lineStyle: {
+                    normal: {
+                        curveness: 0.2
+                    }
+                }
+            },{
+                source: 'fea1',
+                target: 'III',
+                symbolSize: [5, 20],
+                lineStyle: {
+                    normal: {
+                        curveness: 0.2
+                    }
+                }
+            },{
+                source: 'fea1',
+                target: 'IV',
+                symbolSize: [5, 20],
+                lineStyle: {
+                    normal: {
+                        curveness: 0.2
+                    }
+                }
+            },{
+                source: 'fea2',
+                target: 'II',
+                symbolSize: [5, 20],
+                lineStyle: {
+                    normal: {
+                        curveness: 0.2
+                    }
+                }
+            },{
+                source: 'fea2',
+                target: 'III',
+                symbolSize: [5, 20],
+                lineStyle: {
+                    normal: {
+                        curveness: 0.2
+                    }
+                }
+            },{
+                source: 'fea2',
+                target: 'IV',
+                symbolSize: [5, 20],
+                lineStyle: {
+                    normal: {
+                        curveness: 0.2
+                    }
+                }
+            },{
+                source: 'fea3',
+                target: 'II',
+                symbolSize: [5, 20],
+                lineStyle: {
+                    normal: {
+                        curveness: 0.2
+                    }
+                }
+            },{
+                source: 'fea3',
+                target: 'III',
+                symbolSize: [5, 20],
+                lineStyle: {
+                    normal: {
+                        curveness: 0.2
+                    }
+                }
+            },{
+                source: 'fea3',
+                target: 'IV',
+                symbolSize: [5, 20],
+                lineStyle: {
+                    normal: {
+                        curveness: 0.2
+                    }
+                }
+            },{
+                source: '...',
+                target: 'II',
+                symbolSize: [5, 20],
+                lineStyle: {
+                    normal: {
+                        curveness: 0.2
+                    }
+                }
+            },{
+                source: '...',
+                target: 'III',
+                symbolSize: [5, 20],
+                lineStyle: {
+                    normal: {
+                        curveness: 0.2
+                    }
+                }
+            },{
+                source: '...',
+                target: 'IV',
+                symbolSize: [5, 20],
+                lineStyle: {
+                    normal: {
+                        curveness: 0.2
+                    }
+                }
+            },{
+                source: 'fea2048',
+                target: 'II',
+                symbolSize: [5, 20],
+                lineStyle: {
+                    normal: {
+                        curveness: 0.2
+                    }
+                }
+            },{
+                source: 'fea2048',
+                target: 'III',
+                symbolSize: [5, 20],
+                lineStyle: {
+                    normal: {
+                        curveness: 0.2
+                    }
+                }
+            },{
+                source: 'fea2048',
+                target: 'IV',
+                symbolSize: [5, 20],
+                lineStyle: {
+                    normal: {
+                        curveness: 0.2
+                    }
+                }
+            }],
+            lineStyle: {
+                normal: {
+                    opacity: 0.9,
+                    width: 2,
+                    curveness: 0
+                }
+            }
+        }
+    ]
+};;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+   </body>
+</html>
